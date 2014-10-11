@@ -2,13 +2,13 @@
    "manifest_version": 2,
 
     "name": "Sorkalam",
-    "description": "Possibly brings all synonymical word in tamil including those adopted or commonly used grantham words",
+    "description": "சொற்களம்: ஆங்கிலச் சொல் -> தமிழ்ச் சொற்கள், தமிழ்படுத்தப்பட்டும்/படாமலும்(கிரந்தமாக) வழக்கத்தில் இருந்த மற்றும் இருக்கும் சொற்கள்",
 
     "version": "1.0",
     
          
      "browser_action": {
-        "default_icon": "icon.png",
+        "default_icon": "sorkalam.png",
         "default_popup": "popup.html"
         
       },
@@ -16,7 +16,11 @@
      "permissions": [
         "tabs", 
         "https://glosbe.com/",
-        "https://*/*",
+        "https://*/*"
         
-      ]
+      ],
+      
+      "content_security_policy": "script-src 'self' https://glosbe.com; object-src 'self'"
+      
+      
 }

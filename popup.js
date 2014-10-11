@@ -7,24 +7,25 @@ $( document ).ready(function () {
     $("#lookup").click(function(){ 
        var lookup = document.getElementById('word').value;
     	 
-		 var url = "https://glosbe.com/gapi/translate?from=eng&dest=ta&format=json&phrase=" + lookup + "&pretty=true";
+		 var url = "https://glosbe.com/gapi/translate?from=eng&dest=ta&format=json&phrase=" + lookup + "&callback=result&pretty=true";
 		 
 		 		 
 		 $.ajax({
 			 type: 'GET',
 			 url: url,
-			 success: success,
+			 success: result,
 			 dataType: 'jsonp',
 			 contentType: "application/json"
 	    });
         
     });
+    console.log('AJAX send');
 
 });
 
 
 
-function success( data ){
+function result( data ){
     console.log('AJAX success');
 
     var resEl = document.getElementById('res');
